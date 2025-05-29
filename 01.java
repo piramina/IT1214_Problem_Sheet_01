@@ -28,7 +28,7 @@ class Student{
 	int getDaysAttended(){
 		return daysAttended;
 	}
-	void setDaysAttended(int daysAttended){
+	public void setDaysAttended(int daysAttended){
 		this.daysAttended=daysAttended;
 	}
 }	
@@ -39,19 +39,21 @@ class Student{
 		int count=0;
 		
 		
-		void addStudent(Student s){
+		public void addStudent(Student s){
 			if(count<students.length){
 				students[count++]=s;
+				System.out.println("Student added: "+s.getName());
 			}else{
 				System.out.println("Classroom is full.Can not add more students.");
 			}
 		}
 		
-		void updateAttendence(int studentId,int newDays){
+		public void updateAttendence(int studentId,int newDays){
 			boolean found=false;
-			for(int i=0; i<count; i++){
+			for(int i=0; i<count-1; i++){
 				if(students[i].getStudentId()==studentId){
 					students[i].setDaysAttended(newDays);
+					System.out.println("Updated attendance for student ID: " + studentId);
 					found=true;
 					break;
 				}
