@@ -50,7 +50,7 @@ void addVehicle(Vehicle v){
 void removeVehicle(String licensePlate){
 	boolean found=false;
 	for(int i=0; i<count; i++){
-		if(vehicle[i].getLicensePlate().equals(licensePlate)){
+		if(vehicle[i].getLicensePlate()==licensePlate){
 			for(int j=i; j<count-1; j++){
 				vehicle[j]=vehicle[j+1];
 			}
